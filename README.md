@@ -107,12 +107,15 @@ We need to build a reference directory for leave one out cross validation imputa
 ```sh
 create_imputation_ref.sh -v chr10_EAS_processed.vcf.gz -o chr10_EAS_hg38_high_cov -p 16
 ```
-__NOTE:__  Pre-built imputation reference panel of populations are available for downloading at:
+__NOTE:__  Pre-built imputation reference panel of populations are available for downloading:
+
+
 EAS: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EAS.tar.gz
 EUR: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EUR.tar.gz
 SAS: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_SAS.tar.gz
 
 Assumed that you have downloaded `chr10_EAS.tar.gz`, the upzip command is:
+
 ```sh
 tar -xvzf chr10_EAS.tar.gz
 ```
