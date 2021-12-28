@@ -84,10 +84,11 @@ __OTHERWISE, THERE WILL BE ERRORS__
 #### Obtain tutorial data:
 
 We provide in this tutorial based on chromosome 10, __East Asian population__ dataset:
-- vcf file: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EAS.vcf.gz
-- CADD score file: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EAS_CADD.txt - 3 first columns are fixed format.
-- VIP SNP list: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/VIP_GWAS_CLINVAR_ALL.txt - 3 first columns are fixed format.
-- 
+- vcf file: https://zenodo.org/record/5807198/files/chr10_EAS.vcf.gz?download=1
+- CADD score file: https://zenodo.org/record/5807198/files/chr10_EAS_CADD.txt?download=1
+- VIP SNP list: https://zenodo.org/record/5807198/files/VIP_GWAS_CLINVAR_ALL.txt?download=1
+
+
 #### Recommended protocol for vcf preprocessing:
 
 Assumed that you have a raw vcf file: `chr10_EAS.vcf.gz` in your current directory, recommended protocol to prepare vcf file is:
@@ -139,11 +140,11 @@ create_imputation_ref.sh -v chr10_EAS_processed.vcf.gz -o chr10_EAS_hg38_high_co
 __NOTE:__  Pre-built imputation reference panel of populations are available for downloading:
 
 
-EAS: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EAS.tar.gz
+EAS: https://zenodo.org/record/5807198/files/chr10_EAS.tar.gz?download=1
 
-EUR: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EUR.tar.gz
+EUR: https://zenodo.org/record/5807198/files/chr10_EUR.tar.gz?download=1
 
-SAS: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_SAS.tar.gz
+SAS: https://zenodo.org/record/5807198/files/chr10_SAS.tar.gz?download=1
 
 Assumed that you have downloaded `chr10_EAS.tar.gz`, the upzip command is:
 
@@ -181,7 +182,7 @@ Now we can build model with `buid_imputation_model.R`
 buid_imputation_model.R imputation_Rdata=naive_chr10_EAS.Rdata find_snp=chr10_EAS_find_snp_output.txt out_Rdata=chr10_EAS_model.Rdata
 ```
 
-OR you may download the model at: https://zenodo.org/api/files/efb7a8bc-efce-4391-8f65-59b974328c2e/chr10_EAS_model.Rdata
+OR you may download the model at: https://zenodo.org/record/5807198/files/chr10_EAS_model.Rdata?download=1
 
 ### 4.2 Tag SNP selection with LmTag
 
@@ -242,3 +243,11 @@ imputation_with_prebuilt_ref.sh -t chr10_EAS_tagSNP_cleaned.txt -r chr10_EAS_hg3
 
 compute_imputation_accuracy.R imputation=LmTag_chr10_EAS out=LmTag_chr10_EAS.Rdata
 ```
+
+## 7. License
+
+TBA
+
+## 8. Reference
+
+TBA
