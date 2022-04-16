@@ -7,7 +7,7 @@
 # We assume that bcftools, vcftools, Minimac3, and Minimac4 are properly installed and can be called directly from bash shell
 #
 #input parameters are:
-    #	-v|--vcf -- input vcf file to buil reference (should be in bgzip formatted file)
+    #	-v|--vcf -- input vcf file to build reference (should be in bgzip formatted file)
     #	-o|--out -- output directory that contains all m3vcf files, pre-created dir is not needed.
     #	-p|--thread -- number of thread.
 

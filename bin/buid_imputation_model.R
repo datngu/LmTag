@@ -4,6 +4,9 @@
 # Date: 15 March 2021
 # revised: 15 June 2021
 
+# 06 April 2022
+# add model interaction
+
 # This script is use to build model for imputation R2.
 
 ###############
@@ -51,7 +54,7 @@ if(is.na(find_snp_path)){
 
 if(is.na(out_Rdata_path)){
   out_Rdata_path="imputation_model.Rdata"
-  cat("ld_path is not found! default value is used: \"imputation_model.Rdata\" \n\n")
+  cat("out_Rdata is not found! default value is used: \"imputation_model.Rdata\" \n\n")
 }
 
 
@@ -71,13 +74,25 @@ train$tagged_AF = data$AF[match(train$tagged, data$POS)]
 train$distance = abs(train$tag - train$tagged)
 train$R2 = train$r2
 train$imputed_R2 = data$r_2[match(train$tagged, data$POS)]
+
+# model linear
+
 model <- lm(imputed_R2 ~ R2 + tag_AF + tagged_AF + distance, data = train)
-cat("\nMODEL SUMMARY: \n\n")
+cat("\nMODEL LINEAR SUMMARY: \n\n")
 summary(model)
-sink(paste0(out_Rdata_path, "_model_summary.txt"))
+sink(paste0(out_Rdata_path, "_model_linear_summary.txt"))
 print(summary(model))
 sink() 
-save(model, data, train, file = out_Rdata_path)
+
+# model interaction
+model_interaction <- lm(imputed_R2 ~ R2*tagged_AF + R2 + tag_AF + tagged_AF + distance, data = train)
+cat("\nMODEL INTERACTION SUMMARY: \n\n")
+summary(model_interaction)
+sink(paste0(out_Rdata_path, "_model_interaction_summary.txt"))
+print(summary(model_interaction))
+sink() 
+
+save(model, model_interaction, data, train, file = out_Rdata_path)
 cat(paste0("output saved: ", out_Rdata_path))
 cat("\n\nDone!\n\n")
 
