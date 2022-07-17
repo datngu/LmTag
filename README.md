@@ -278,6 +278,4 @@ The Software is restricted to non-commercial research purposes.
 
 ## 8. Reference
 
-LmTag: functional-enrichment and imputation-aware tag SNP selection for population-specific genotyping arrays
-Dat Thanh Nguyen, Quan Nguyen, Duong Thuy Nguyen, Nam Sy Vo
-bioRxiv 2022.01.28.478108; doi: https://doi.org/10.1101/2022.01.28.478108
+Dat Thanh Nguyen, Quan Hoang Nguyen, Nguyen Thuy Duong, Nam S Vo, LmTag: functional-enrichment and imputation-aware tag SNP selection for population-specific genotyping arrays, Briefings in Bioinformatics, 2022;, bbac252, https://doi.org/10.1093/bib/bbac252
